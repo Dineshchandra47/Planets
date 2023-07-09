@@ -10,14 +10,11 @@ const App = ()=> {
         return (
           <Provider>
             <Wrapper>
-              <Navbar pathName = {location.pathname}
-               onHover = {setAcivePlanet}
-               activePlanet = {activePalanet}
-               >
-
-                
-
-              </Navbar>
+            <Navbar
+                    pathName={location.pathname}
+                    onHover={setActivePlanet}
+                    activePlanet={activePlanet}
+                />
             </Wrapper>
           </Provider>
         )                 

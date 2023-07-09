@@ -4,7 +4,14 @@ import './App.css'
 
 const App = ()=> {
   return <>
-                          
+        cosnt location = useLocation()
+        const [active,setActivePlanet] = useState('/') 
+
+        return (
+          <Provider>
+            
+          </Provider>
+        )                 
   </>
 }
 export default App

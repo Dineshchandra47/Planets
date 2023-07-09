@@ -15,6 +15,8 @@ const App = ()=> {
                activePlanet = {activePalanet}
                >
 
+                
+
               </Navbar>
             </Wrapper>
           </Provider>

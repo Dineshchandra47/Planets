@@ -25,23 +25,22 @@ export const keyVisual = ({ activePlanet }) => {
 
   return (
     <Container
-    variants = {containerVarient}
-    initial = 'hidden'
-    animate = 'visible'
-    exit = 'exit' 
+      variants={containerVarient}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
     >
-      <Sun/>
-      
+      <Sun />
+
       {planets.map((planet) => (
         <planetSwitch
-        data={planet}
-        key = {planet.id}
-        activePlanet = {activePlanet} 
+          data={planet}
+          key={planet.id}
+          activePlanet={activePlanet}
         />
       ))}
 
-      <AsteroidsBelt/>
-
+      <AsteroidsBelt />
     </Container>
-  )
+  );
 };

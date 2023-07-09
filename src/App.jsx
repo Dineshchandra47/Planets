@@ -1,5 +1,5 @@
 import { useState } from 'react'                                  
-import {Switch, Route, useLocation} from 'react-router-dom'
+import { Switch, Route, useLocation } from 'react-router-dom';
 import './App.css'                
 
 const App = ()=> {
@@ -9,7 +9,14 @@ const App = ()=> {
 
         return (
           <Provider>
-            
+            <Wrapper>
+              <Navbar pathName = {location.pathname}
+               onHover = {setAcivePlanet}
+               activePlanet = {activePalanet}
+               >
+
+              </Navbar>
+            </Wrapper>
           </Provider>
         )                 
   </>

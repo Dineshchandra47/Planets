@@ -39,6 +39,7 @@ export const keyVisual = ({ activePlanet }) => {
           activePlanet={activePlanet}
         />
       ))}
+      
 
       <AsteroidsBelt />
     </Container>

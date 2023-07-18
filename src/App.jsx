@@ -1,65 +1,29 @@
-import { useState } from 'react';
-import { Switch, Route, useLocation } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
-import Provider from '../src/components/Provider/Provider';
-import Wrapper from '.././src/components/Wrapper/Wrapper';
-import Navbar from '.././src/components/Navbar/Navbar';
-import Mercury from '.././src/pages/Mercury/Mercury';
-import Venus from '.././src/pages/Venus/Venus';
-import Earth from '.././src/pages/Earth/Earth';
-import Mars from '.././src/pages/Mars/Mars';
-import Jupiter from '.././src/pages/Jupiter/Jupiter';
-import Saturn from '.././src/pages/Saturn/Saturn';
-import Uranus from '.././src/pages/Uranus/Uranus';
-import Neptune from '.././src/pages/Neptune/Neptune';
-import KeyVisual from '../src/components/KeyVisual/KeyVisual';
+import "../src/App.sass";
+import { Route, useLocation } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
+import { createRoutesFromElements, Routes } from "react-router-dom";
+import Layout from "../src/components/Layout";
+import { RouterProvider } from "react-router-dom";
+import Planet from "../src/components/Planet";
+import Home from "../src/components/Home";
 
-const App = () => {
-    const location = useLocation();
-    const [activePlanet, setActivePlanet] = useState('/');
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />}></Route>
+        <Route path="/planet/:planetname" element={<Planet />}></Route>
+      </Route>
+    </>
+  )
+);
 
-    return (
-        <Provider>
-            <Wrapper>
-                <Navbar
-                    pathName={location.pathname}
-                    onHover={setActivePlanet}
-                    activePlanet={activePlanet}
-                />
-                <AnimatePresence>
-                    <Switch location={location} key={location.key}>
-                        <Route exact path="/mercury">
-                            <Mercury />
-                        </Route>
-                        <Route exact path="/venus">
-                            <Venus />
-                        </Route>
-                        <Route exact path="/earth">
-                            <Earth />
-                        </Route>
-                        <Route exact path="/mars">
-                            <Mars />
-                        </Route>
-                        <Route exact path="/jupiter">
-                            <Jupiter />
-                        </Route>
-                        <Route exact path="/saturn">
-                            <Saturn />
-                        </Route>
-                        <Route exact path="/uranus">
-                            <Uranus />
-                        </Route>
-                        <Route exact path="/neptune">
-                            <Neptune />
-                        </Route>
-                        <Route exact path="/">
-                            <KeyVisual activePlanet={activePlanet} />
-                        </Route>
-                    </Switch>
-                </AnimatePresence>
-            </Wrapper>
-        </Provider>
-    );
-};
+function App() {
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
+}
 
 export default App;

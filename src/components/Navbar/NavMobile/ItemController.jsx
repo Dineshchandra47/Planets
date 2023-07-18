@@ -1,5 +1,5 @@
 import { Item, Link } from './NavMobileStyles';
-import Icon from '../../Icon/Icon';
+import {Icon } from '../../Icon/Icon';
 import { planets } from '../data';
 
 const ItemsMobile = ({ restoreToDefault }) => {

@@ -1,11 +1,21 @@
-// import { useState } from 'react'                                  
+import { useState } from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence } from 'framer-motion';
+import Provider from '../src/components/Provider/Provider';
+import Wrapper from '.././src/components/Wrapper/Wrapper';
+import Navbar from '.././src/components/Navbar/Navbar';
+import Mercury from '.././src/pages/Mercury/Mercury';
+import Venus from '.././src/pages/Venus/Venus';
+import Earth from '.././src/pages/Earth/Earth';
+import Mars from '.././src/pages/Mars/Mars';
+import Jupiter from '.././src/pages/Jupiter/Jupiter';
+import Saturn from '.././src/pages/Saturn/Saturn';
+import Uranus from '.././src/pages/Uranus/Uranus';
+import Neptune from '.././src/pages/Neptune/Neptune';
+import KeyVisual from '../src/components/KeyVisual/KeyVisual';
 
-import './App.css'                
-
-const App = ()=> {
-  return <>
-        const location = useLocation();
+const App = () => {
+    const location = useLocation();
     const [activePlanet, setActivePlanet] = useState('/');
 
     return (
@@ -15,10 +25,8 @@ const App = ()=> {
                     pathName={location.pathname}
                     onHover={setActivePlanet}
                     activePlanet={activePlanet}
-               activePlanet={activePlanet}
-               />
-
-              <AnimatePresence>
+                />
+                <AnimatePresence>
                     <Switch location={location} key={location.key}>
                         <Route exact path="/mercury">
                             <Mercury />
@@ -50,8 +58,8 @@ const App = ()=> {
                     </Switch>
                 </AnimatePresence>
             </Wrapper>
-          </Provider>
-        )                 
-  </>
-}
-export default App
+        </Provider>
+    );
+};
+
+export default App;

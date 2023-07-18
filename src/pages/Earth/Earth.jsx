@@ -1,5 +1,5 @@
 
-import {data} form "./data"
+import {data} from "./data"
 
 export const Earth = () => {
 

@@ -4,8 +4,8 @@ import { useRef } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
-import data from "../data.json";
-import "../../src/App.sass";
+import data from "../src/data.json";
+import "./App.scss";
 const Planet = () => {
   let { planetname } = useParams();
 
@@ -97,9 +97,9 @@ const Planet = () => {
           </section>
           <section className="planet-infos">
             <motion.h2 className="planet-heading">{name}</motion.h2>
-            <p>{planetpara}</p>
-            <p>
-              Source <a href={source}>Wikipedia</a>
+            <p className="planet-data">{planetpara}</p>
+            <p className="source">
+              Source <a href={source} ><span className="wiki" >Wikipedia</span></a>
             </p>
             <motion.button
               whileHover={{ scale: 1.1 }}

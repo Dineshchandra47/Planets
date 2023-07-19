@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
-import "../../src/App.sass";
+import "./App.scss";
 import { motion } from "framer-motion";
 import { delay } from "framer-motion";
+
 const Home = () => {
   return (
     <section className="home-page">

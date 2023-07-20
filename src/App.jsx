@@ -1,4 +1,3 @@
-import "./App.scss";
 import { Route } from "react-router-dom";
 import { createBrowserRouter } from "react-router-dom";
 import { createRoutesFromElements, Routes } from "react-router-dom";
@@ -6,8 +5,11 @@ import Layout from "./Layout";
 import { RouterProvider } from "react-router-dom";
 import Planet from "./Planet";
 import Home from "./Home";
+import "./App.scss";
+
 
 const router = createBrowserRouter(
+
   createRoutesFromElements(
     <>
       <Route path="/" element={<Layout />}>

@@ -5,7 +5,9 @@ import { motion } from "framer-motion";
 import { delay } from "framer-motion";
 
 const Home = () => {
+
   return (
+    
     <section className="home-page">
       <motion.ul
         className="planetimages"

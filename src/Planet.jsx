@@ -6,7 +6,9 @@ import { useParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import data from "../src/data.json";
 import "./App.scss";
+
 const Planet = () => {
+
   let { planetname } = useParams();
 
   const {
@@ -31,6 +33,7 @@ const Planet = () => {
   const options = useRef("overview");
 
   function changeoption(e) {
+
     const geoImage = document.getElementById("geo-image");
     options.current = e.target.id;
     const buttons = document.querySelectorAll(".planet-infos button");
